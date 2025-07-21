@@ -1,0 +1,5 @@
+how to run example.py on test_doc.png:
+
+python example.py --image test_doc.png --coordinates 120,80,380,60,420,380,80,400
+
+where 120,80,380,60,420,380,80,400 are the coordinates of the corners that are to enter manually
