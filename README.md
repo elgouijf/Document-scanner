@@ -44,7 +44,7 @@ Noise in scanned images arises from sensor artifacts or lighting inconsistencies
 - **Spatial domain:** weights neighboring pixels using a Gaussian kernel  
 - **Frequency domain:** suppresses high-frequency noise (via convolution theorem)
 
-G(x, y) = (1 / (2πσ²)) * exp(-(x² + y²) / (2σ²))
+**G(x, y) = (1 / (2πσ²)) * exp(-(x² + y²) / (2σ²))**
 
 
 Applying it is equivalent to **smoothing** the image, preparing it for stable gradient and contour detection.
@@ -65,8 +65,7 @@ Edges are detected by computing **image gradients** (first derivatives):
 
 To extract **the outer-layer corners**, I initially considered using the Harris corner detector, which identifies points where image intensity varies significantly in two orthogonal directions—typically corresponding to corners and junctions in the image.
 
-It uses the **second moment matrix** \( M \):
-
+It uses the **second moment matrix** :
        ┌                            ┐
    M = │ ∑(Iₓ²)      ∑(Iₓ·Iᵧ)        |
        │ ∑(Iₓ·Iᵧ)    ∑(Iᵧ²)          │
