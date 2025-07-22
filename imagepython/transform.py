@@ -55,7 +55,7 @@ def order_points(points):
     return rectangle
 
 
-def four_points_transform(image, points):
+def top_down_view(image, points):
 
     rectangle = order_points(points)
     (tl, tr, br, bl) = rectangle

@@ -1,4 +1,4 @@
-from imagepython.transform import four_points_transform
+from imagepython.transform import top_down_view
 import numpy as np
 import cv2 as cv
 import argparse # As a substitute for sys, it is more user friendly
@@ -29,14 +29,15 @@ image = cv.imread(arguments["image"])
 if image is None:
     print("Failed to load image:", arguments["image"])
     exit(1)
-ß
+
 #get the top-down view (also called birds eye view)
-warped_image = four_points_transform(image, points)
+warped_image = top_down_view(image, points)
 
 #show original and wraped images
 
 cv.imshow("original image", image)
 # impose a delay of 0, meaning the image will stay opened until a key is pressed
+cv.imshow("warped image", warped_image)
 cv.waitKey(0)
 input("Press Enter to exit..")
 cv.destroyAllWindows()
