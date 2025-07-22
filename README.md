@@ -44,9 +44,8 @@ Noise in scanned images arises from sensor artifacts or lighting inconsistencies
 - **Spatial domain:** weights neighboring pixels using a Gaussian kernel  
 - **Frequency domain:** suppresses high-frequency noise (via convolution theorem)
 
-\[
-G(x, y) = \frac{1}{2\pi\sigma^2} e^{-\frac{x^2 + y^2}{2\sigma^2}}
-\]
+G(x, y) = (1 / (2πσ²)) * exp(-(x² + y²) / (2σ²))
+
 
 Applying it is equivalent to **smoothing** the image, preparing it for stable gradient and contour detection.
 
@@ -68,12 +67,10 @@ To extract **the outer-layer corners**, I initially considered using the Harris 
 
 It uses the **second moment matrix** \( M \):
 
-\[
-M = \begin{bmatrix}
-\sum I_x^2 & \sum I_x I_y \\
-\sum I_x I_y & \sum I_y^2
-\end{bmatrix}
-\]
+       ┌                            ┐
+** M = │ ∑(Iₓ²)      ∑(Iₓ·Iᵧ)        │
+       │ ∑(Iₓ·Iᵧ)    ∑(Iᵧ²)          │
+       └                            ┘
 
 The **eigenvalues** of \( M \) measure variation along different directions:
 - Two large eigenvalues → corner
@@ -81,9 +78,8 @@ The **eigenvalues** of \( M \) measure variation along different directions:
 - Both small → flat region
 
 The **Harris response**:
-\[
-R = \det(M) - k(\text{trace}(M))^2
-\]
+
+**R = det(M) - k * (trace(M))²**
 
 Corner candidates are selected based on \( R \).
 
