@@ -88,7 +88,7 @@ R = \det(M) - k(\text{trace}(M))^2
 Corner candidates are selected based on \( R \).
 
 However, filtering out **the inner-layer corners** proved to be quite challenging, so I eventually abandoned that approach. Instead, I discovered a more effective method using contour detection. Nonetheless, exploring this path gave me valuable insights and deepened my understanding of image analysis.
----
+
 
 ### 🎭 5. Adaptive Thresholding
 
