@@ -55,7 +55,7 @@ Applying it is equivalent to **smoothing** the image, preparing it for stable gr
 
 Edges are detected by computing **image gradients** (first derivatives):
 
-- \( \nabla I = \left[\frac{\partial I}{\partial x}, \frac{\partial I}{\partial y} \right] \)
+- **∇I = [∂I/∂x, ∂I/∂y]**
 - Typically computed via Sobel or Scharr filters (discrete convolution masks)
 - Strong gradient magnitudes indicate likely edges
 
@@ -68,7 +68,7 @@ To extract **the outer-layer corners**, I initially considered using the Harris 
 It uses the **second moment matrix** \( M \):
 
        ┌                            ┐
-** M = │ ∑(Iₓ²)      ∑(Iₓ·Iᵧ)        │
+   M = │ ∑(Iₓ²)      ∑(Iₓ·Iᵧ)        |
        │ ∑(Iₓ·Iᵧ)    ∑(Iᵧ²)          │
        └                            ┘
 
