@@ -124,7 +124,7 @@ Once you launch the script, it will open one or more OpenCV windows to show each
 
     - Grayscale
 
-    - Color (BGR)
+    - Color (RGB)
 
 
 ⚠️ Compatibility Note (NumPy, scikit-image, Python)
